@@ -12,7 +12,7 @@ type BoardingPass struct {
 	FrontBack, RightLeft []string
 }
 
-var Halfes = map[string]int{
+var Halfs = map[string]int{
 	"F": 1,
 	"B": 0,
 	"L": 1,
@@ -43,7 +43,7 @@ func binarySpacePartitioning(input []string, size int) int {
 	bounds := []int{0, size - 1}
 	for _, c := range input {
 		diff := (bounds[1] - bounds[0] + 1) / 2
-		op := Halfes[c]
+		op := Halfs[c]
 
 		if op == 1 {
 			diff = diff * -1
